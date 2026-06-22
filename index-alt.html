@@ -508,6 +508,18 @@
             let currentPage = 1;
             let totalPages = 1;
 
+            function updateSearchLink(searchWord) {
+                const currentUrl = new URL(window.location);
+                if (searchWord) {
+                    currentUrl.searchParams.set('query', searchWord);
+                } else {
+                    currentUrl.searchParams.delete('query');
+                }
+                window.history.replaceState({
+                    search: searchWord
+                }, '', currentUrl.href);
+            }
+
             async function loadDictionary() {
                 try {
                     const res = await fetch('erzya-dict.json');
@@ -518,16 +530,17 @@
 
                     allEntries = normalizeEntries(data);
 
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const q = urlParams.get('q');
+                    // Check URL for search query AFTER data is loaded
+                    const params = new URLSearchParams(window.location.search);
+                    const searchedTerm = params.get('query');
 
-                    if (q) {
-                        searchInput.value = q;
-                        applyFiltersAndRender(true);
+                    if (searchedTerm) {
+                        searchInput.value = searchedTerm;
+                        applyFiltersAndRender();
                     } else {
                         grid.innerHTML = '<div class="empty-state">Enter a search term to see results</div>';
                         statsDisplay.innerHTML =
-                            `<span>${allEntries.length} entries loaded</span><span></span>`;
+                        `<span>${allEntries.length} entries loaded</span><span></span>`;
                         updateClearIconVisibility();
                         updatePagination(0, 1);
                     }
@@ -935,19 +948,12 @@
                 }
             }
 
-            function applyFiltersAndRender(skipHistory = false) {
+            function applyFiltersAndRender() {
                 const searchTerm = searchInput.value.trim();
                 const lowerTerm = searchTerm.toLowerCase();
-                updateClearIconVisibility();
 
-                if (!skipHistory) {
-                    const newUrl = searchTerm ?
-                        '?q=' + encodeURIComponent(searchTerm) :
-                        window.location.pathname;
-                    window.history.pushState({
-                        q: searchTerm
-                    }, '', newUrl);
-                }
+                updateClearIconVisibility();
+                updateSearchLink(searchTerm);
 
                 if (searchTerm === '') {
                     currentResults = [];
@@ -1032,7 +1038,7 @@
                 currentPage = 1;
                 renderPage();
                 statsDisplay.innerHTML =
-                    `<span>${currentResults.length} entries found · ${allEntries.length} total</span><span id="pageInfo">page ${currentPage} of ${totalPages}</span>`;
+                    `<span>${currentResults.length} entries found · ${allEntries.length} total</span><span id="pageInfo">page ${currentPage}</span>`;
             }
 
             function renderPage() {
@@ -1050,7 +1056,7 @@
 
                 renderEntries(pageEntries, searchInput.value.trim());
                 statsDisplay.innerHTML =
-                    `<span>${currentResults.length} entries found · ${allEntries.length} total</span><span id="pageInfo">page ${currentPage} of ${totalPages}</span>`;
+                    `<span>${currentResults.length} entries found · ${allEntries.length} total</span><span id="pageInfo">page ${currentPage}</span>`;
             }
 
             function processAndKeepSeparators(text, searchTerm, refLinks = '') {
@@ -1553,26 +1559,15 @@
             function clearSearch() {
                 searchInput.value = '';
                 updateClearIconVisibility();
+                updateSearchLink('');
                 currentResults = [];
                 currentPage = 1;
-
-                window.history.pushState({
-                    q: ''
-                }, '', window.location.pathname);
-
                 grid.innerHTML = '<div class="empty-state">Enter a search term to see results</div>';
                 statsDisplay.innerHTML = `<span>${allEntries.length} entries loaded</span><span></span>`;
                 updatePagination(0, 1);
             }
 
-            window.addEventListener('popstate', function (e) {
-                const urlParams = new URLSearchParams(window.location.search);
-                const q = urlParams.get('q') || '';
-                searchInput.value = q;
-                applyFiltersAndRender(true);
-            });
-
-            searchButton.addEventListener('click', () => applyFiltersAndRender(false));
+            searchButton.addEventListener('click', applyFiltersAndRender);
 
             clearIcon.addEventListener('click', function (e) {
                 e.stopPropagation();
@@ -1581,12 +1576,13 @@
 
             searchInput.addEventListener('keypress', function (e) {
                 if (e.key === 'Enter') {
-                    applyFiltersAndRender(false);
+                    applyFiltersAndRender();
                 }
             });
 
             searchInput.addEventListener('input', function () {
                 updateClearIconVisibility();
+                applyFiltersAndRender();
             });
 
             searchInput.addEventListener('blur', function () {
