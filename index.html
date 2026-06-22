@@ -539,7 +539,7 @@
         <p>© 2026 Erzya Dictionary · Эрзянь валкс</p>
     </footer>
 
-    <script>
+<script>
         (function () {
             const grid = document.getElementById('cardGrid');
             const searchInput = document.getElementById('searchInput');
@@ -628,7 +628,6 @@
                     const language = original.Language || '';
                     const lemma = original.Lemmas || '';
                     const pos = original.POS || '';
-                    const synonyms = original.Synonyms || '';
                     const transcription = original.Transcription || '';
                     const etymology = original.Etymology || '';
 
@@ -642,7 +641,6 @@
                             _language: language,
                             _lemma: lemma,
                             _pos: pos,
-                            _synonyms: synonyms,
                             _transcription: transcription,
                             _etymology: etymology,
                             _sources: {},
@@ -655,17 +653,6 @@
                         map.set(key, newEntry);
                     } else {
                         const existing = map.get(key);
-
-                        if (synonyms) {
-                            if (!existing._synonyms) {
-                                existing._synonyms = synonyms;
-                            } else {
-                                const existingParts = existing._synonyms.split(/[,;]\s*/);
-                                if (!existingParts.includes(synonyms)) {
-                                    existing._synonyms += '; ' + synonyms;
-                                }
-                            }
-                        }
 
                         if (transcription && !existing._transcription) {
                             existing._transcription = transcription;
@@ -697,18 +684,6 @@
                             langCode: 'trx',
                             name: 'trx',
                             value: entry._transcription,
-                            examples: [],
-                            isSpecial: true
-                        });
-                    }
-                    if (entry._synonyms) {
-                        if (!grouped['syn']) grouped['syn'] = [];
-                        grouped['syn'].push({
-                            key: 'syn',
-                            displayKey: 'syn',
-                            langCode: 'syn',
-                            name: 'syn',
-                            value: entry._synonyms,
                             examples: [],
                             isSpecial: true
                         });
@@ -773,11 +748,12 @@
             }
 
             function processEntry(original, entry) {
+                // Notice we removed 'Synonyms' from here so it gets grouped exactly 
+                // like a normal source dictionary for examples vs definitions
                 const skipFields = [
                     'Language',
                     'Lemmas',
                     'POS',
-                    'Synonyms',
                     'Transcription',
                     'Etymology',
                     'Examples'
@@ -821,8 +797,13 @@
                     if (!entry._sources[key]) {
                         let sourceName = key;
                         let langCode = '';
+                        let isSpecial = false;
 
-                        if (key.includes(':')) {
+                        if (key === 'Synonyms') {
+                            langCode = 'syn';
+                            sourceName = 'syn';
+                            isSpecial = true;
+                        } else if (key.includes(':')) {
                             const parts = key.split(':');
                             const firstPart = parts[0];
                             if (firstPart.length >= 2 && firstPart.length <= 3 && /^[a-z]+$/.test(firstPart)) {
@@ -833,11 +814,12 @@
 
                         entry._sources[key] = {
                             key: key,
-                            displayKey: getDisplayName(key),
+                            displayKey: key === 'Synonyms' ? 'syn' : getDisplayName(key),
                             langCode: langCode,
                             name: sourceName,
                             value: '',
-                            examples: []
+                            examples: [],
+                            isSpecial: isSpecial
                         };
                     }
 
@@ -1026,14 +1008,6 @@
                         }
                     }
 
-                    if (entry._synonyms && entry._synonyms.toLowerCase().includes(lowerTerm)) {
-                        if (isPrefixMatch(entry._synonyms, lowerTerm)) {
-                            score = Math.max(score, 45);
-                        } else {
-                            score = Math.max(score, 20);
-                        }
-                    }
-
                     if (entry._transcription && entry._transcription.toLowerCase().includes(lowerTerm)) {
                         score = Math.max(score, 15);
                     }
@@ -1146,6 +1120,9 @@
                     html += `</div>`;
 
                     function getRefNumber(sourceKey) {
+                        // Skip ref attribution for native Synonym keys entirely
+                        if (sourceKey === 'Synonyms') return null;
+
                         const displayName = entry._originalToDisplay ? entry._originalToDisplay[sourceKey] :
                             getDisplayName(sourceKey);
                         if (!refNumberMap[displayName]) {
@@ -1475,7 +1452,8 @@
                                 }
                             }
 
-                            if (exMap.size > 0 && !['trx', 'syn', 'ety'].includes(lang)) {
+                            // Notice we removed 'syn' from the exclusion list here
+                            if (exMap.size > 0 && !['trx', 'ety'].includes(lang)) {
                                 html += `<div class="examples-wrapper">`;
                                 exMap.forEach((ex) => {
                                     const refIds = ex.sources.map(key => getRefNumber(key)).filter(
