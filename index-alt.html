@@ -21,20 +21,52 @@
         body {
             background: #f5f3ef;
             font-family: "Literata", serif;
-            padding: 5rem 1.5rem;
             color: #2c2c2c;
             line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main-content {
+            flex: 1 0 auto;
+            padding: 5rem 1.5rem 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .site-footer {
+            flex-shrink: 0;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: #8a7a68;
+            font-size: 0.9rem;
+            border-top: 1px solid #d4c9b8;
+        }
+
+        .site-footer a {
+            color: #2c1810;
+            text-decoration: none;
+            border-bottom: 1px dashed #8a7a68;
+            transition: 0.1s;
+        }
+
+        .site-footer a:hover {
+            border-bottom-color: #2c1810;
+            background-color: #e8e0d6;
         }
 
         .container {
             max-width: 900px;
+            width: 100%;
             margin: 0 auto;
             background: white;
             padding: 2rem 2.5rem;
             border-radius: 8px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            min-height: 400px;
-            transition: min-height 0.2s;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         h1 {
@@ -158,8 +190,10 @@
         }
 
         .entries-container {
-            margin-top: 1.4rem;
-            min-height: 200px;
+            margin-top: 0.7rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         .entry-block {
@@ -282,7 +316,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 300px;
+            flex: 1;
+            min-height: 200px;
             text-align: center;
             color: #8a7a68;
             font-style: italic;
@@ -395,13 +430,20 @@
 
         @media (max-width: 640px) {
             body {
-                padding: 0;
                 background: white;
+            }
+
+            .main-content {
+                padding: 0;
+            }
+
+            .site-footer {
+                padding: 1.5rem 1rem;
+                background: #fcfaf7;
             }
 
             .container {
                 padding: 1.2rem 1rem;
-                min-height: 300px;
                 box-shadow: none;
                 border-radius: 0;
             }
@@ -461,33 +503,41 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1><a href="/erzya-dict/index-alt.html">Erzya Dictionary <small>Эрзянь
-                    келень валкс</small></a></h1>
+    <main class="main-content">
+        <div class="container">
+            <h1><a href="/erzya-dict/index-alt.html">Erzya Dictionary <small>Эрзянь
+                        келень валкс</small></a></h1>
 
-        <div class="search-area">
-            <div class="search-wrapper">
-                <input type="text" id="searchInput" placeholder="Search lemma or translation…" autofocus>
-                <button id="clearIcon" class="clear-icon" aria-label="Clear search">✕</button>
+            <div class="search-area">
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" placeholder="Search lemma or translation…" autofocus>
+                    <button id="clearIcon" class="clear-icon" aria-label="Clear search">✕</button>
+                </div>
+                <button id="searchButton">Search</button>
             </div>
-            <button id="searchButton">Search</button>
+
+            <div class="stats" id="statsDisplay">
+                <span>0 entries loaded</span>
+                <span id="pageInfo"></span>
+            </div>
+
+            <div id="cardGrid" class="entries-container">
+                <div class="empty-state">Enter a search term to see results</div>
+            </div>
+
+            <div class="pagination" id="pagination">
+                <button id="prevPage" disabled>◀ Previous</button>
+                <span class="page-info" id="pageInfoText">Page 1 of 1</span>
+                <button id="nextPage">Next ▶</button>
+            </div>
         </div>
 
-        <div class="stats" id="statsDisplay">
-            <span>0 entries loaded</span>
-            <span id="pageInfo"></span>
         </div>
+    </main>
 
-        <div id="cardGrid" class="entries-container">
-            <div class="empty-state">Enter a search term to see results</div>
-        </div>
-
-        <div class="pagination" id="pagination">
-            <button id="prevPage" disabled>◀ Previous</button>
-            <span class="page-info" id="pageInfoText">Page 1 of 1</span>
-            <button id="nextPage">Next ▶</button>
-        </div>
-    </div>
+    <footer class="site-footer">
+        <p>© 2026 Erzya Dictionary · Эрзянь валкс</p>
+    </footer>
 
     <script>
         (function () {
