@@ -426,7 +426,7 @@
         .pagination .page-info {
             font-size: 0.95rem;
             color: #5a4a3a;
-            font-style: italic;
+            font-style: normal;
         }
 
         @media (max-width: 640px) {
@@ -499,6 +499,10 @@
                 padding: 0.3rem 0.8rem;
                 font-size: 0.85rem;
             }
+
+            .pagination .page-info {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -538,7 +542,7 @@
         <p>© 2026 Erzya Dictionary · Эрзянь валкс</p>
     </footer>
 
-<script>
+    <script>
         (function () {
             const grid = document.getElementById('cardGrid');
             const searchInput = document.getElementById('searchInput');
@@ -747,8 +751,6 @@
             }
 
             function processEntry(original, entry) {
-                // Notice we removed 'Synonyms' from here so it gets grouped exactly 
-                // like a normal source dictionary for examples vs definitions
                 const skipFields = [
                     'Language',
                     'Lemmas',
