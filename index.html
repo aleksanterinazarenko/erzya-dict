@@ -296,6 +296,7 @@
             margin: 0.1rem 0;
             padding: 0.1rem 1rem;
             font-size: 0.9rem;
+            line-height: 1.7;
         }
 
         .example-item .example-entry {
@@ -1470,12 +1471,12 @@
                                     const examplesForText = grouped.get(text);
                                     const processedText = processTextForLinks(text, searchTerm);
 
-const defsMap = new Map();
+                                    const defsMap = new Map();
                                     const originalDefs = [];
 
-                                    // 1. Collect and merge definitions exactly as before
                                     examplesForText.forEach(ex => {
-                                        const refIds = ex.sources.map(key => getRefNumber(key)).filter(Boolean);
+                                        const refIds = ex.sources.map(key => getRefNumber(
+                                            key)).filter(Boolean);
 
                                         const definitions = ex.translation
                                             .split('#')
@@ -1488,11 +1489,11 @@ const defsMap = new Map();
                                                 defsMap.set(def, new Set());
                                                 originalDefs.push(def);
                                             }
-                                            refIds.forEach(id => defsMap.get(def).add(id));
+                                            refIds.forEach(id => defsMap.get(def)
+                                                .add(id));
                                         });
                                     });
 
-                                    // 2. Group definitions based on source intersections
                                     const groups = [];
                                     let currentGroup = [];
                                     let currentGroupAnchor = new Set();
@@ -1504,7 +1505,6 @@ const defsMap = new Map();
                                             currentGroup.push(def);
                                             currentGroupAnchor = new Set(refSet);
                                         } else {
-                                            // Check if this definition shares any sources with the current group
                                             let intersects = false;
                                             for (let ref of refSet) {
                                                 if (currentGroupAnchor.has(ref)) {
@@ -1514,7 +1514,6 @@ const defsMap = new Map();
                                             }
 
                                             if (intersects) {
-                                                // Keep the intersection as the anchor to chain related sources
                                                 const newAnchor = new Set();
                                                 for (let ref of currentGroupAnchor) {
                                                     if (refSet.has(ref)) newAnchor.add(ref);
@@ -1522,7 +1521,6 @@ const defsMap = new Map();
                                                 currentGroupAnchor = newAnchor;
                                                 currentGroup.push(def);
                                             } else {
-                                                // Start a brand new group if there's no source overlap
                                                 groups.push(currentGroup);
                                                 currentGroup = [def];
                                                 currentGroupAnchor = new Set(refSet);
@@ -1533,18 +1531,20 @@ const defsMap = new Map();
                                         groups.push(currentGroup);
                                     }
 
-                                    // 3. Render and format the grouped translations
                                     const groupsHtml = groups.map(group => {
                                         return group.map((def, i) => {
                                             const refSet = defsMap.get(def);
-                                            const uniqueSortedRefs = [...refSet].sort((a, b) => a - b);
-                                            const refLinks = uniqueSortedRefs.map(refId =>
+                                            const uniqueSortedRefs = [...refSet]
+                                                .sort((a, b) => a - b);
+                                            const refLinks = uniqueSortedRefs.map(
+                                                refId =>
                                                 `<a href="#ref-${refId}" class="ref-link" data-ref="${refId}">[${refId}]</a>`
                                             ).join('');
-                                            
-                                            const rendered = processAndKeepSeparators(def, searchTerm, refLinks);
-                                            
-                                            // Keep numbering if there are multiple translations overall
+
+                                            const rendered =
+                                                processAndKeepSeparators(def,
+                                                    searchTerm, refLinks);
+
                                             if (originalDefs.length > 1) {
                                                 return `${i + 1}. ${rendered}`;
                                             } else {
@@ -1553,8 +1553,8 @@ const defsMap = new Map();
                                         }).join('; ');
                                     });
 
-                                    // Join distinct source groups with the arrow
-                                    const combinedTranslations = groupsHtml.join(';<span class="arrow"> → </span>');
+                                    const combinedTranslations = groupsHtml.join(
+                                        ';<span class="arrow"> → </span>');
 
                                     html += `<div class="example-item">`;
                                     html += `<span class="example-entry">${processedText}</span>`;
