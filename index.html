@@ -1121,7 +1121,6 @@
                     html += `</div>`;
 
                     function getRefNumber(sourceKey) {
-                        // Skip ref attribution for native Synonym keys entirely
                         if (sourceKey === 'Synonyms') return null;
 
                         const displayName = entry._originalToDisplay ? entry._originalToDisplay[sourceKey] :
@@ -1453,7 +1452,6 @@
                                 }
                             }
 
-                            // Notice we removed 'syn' from the exclusion list here
                             if (exMap.size > 0 && !['trx', 'ety'].includes(lang)) {
                                 html += `<div class="examples-wrapper">`;
                                 exMap.forEach((ex) => {
