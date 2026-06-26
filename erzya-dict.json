@@ -2492,8 +2492,8 @@
  {
    "Language": "myv",
    "POS": "noun",
-   "Lemmas": "ававтомо тейтерне",
-   "Examples": "",
+   "Lemmas": "ававтомо",
+   "Examples": "ававтомо тейтерне",
    "ru:Коляденков М.Н., Цыганов Н.Ф.: Эрзянско-русский словарь (1949)": "",
    "fi:Niemi, J., & Mosin, M. V.: Ersäläis-suomalainen sanakirja (1995)": "",
    "ru:Серебренников Б. А.: Эрзянско-русский словарь (1993)": "девочка-сирота",
@@ -2507,8 +2507,8 @@
  {
    "Language": "myv",
    "POS": "noun",
-   "Lemmas": "ававтомо цёрыне",
-   "Examples": "",
+   "Lemmas": "ававтомо",
+   "Examples": "ававтомо цёрыне",
    "ru:Коляденков М.Н., Цыганов Н.Ф.: Эрзянско-русский словарь (1949)": "",
    "fi:Niemi, J., & Mosin, M. V.: Ersäläis-suomalainen sanakirja (1995)": "",
    "ru:Серебренников Б. А.: Эрзянско-русский словарь (1993)": "мальчик-сирота",
@@ -2793,21 +2793,6 @@
    "Language": "myv",
    "POS": "noun",
    "Lemmas": "авака",
-   "Examples": "сон авака левкс",
-   "ru:Коляденков М.Н., Цыганов Н.Ф.: Эрзянско-русский словарь (1949)": "",
-   "fi:Niemi, J., & Mosin, M. V.: Ersäläis-suomalainen sanakirja (1995)": "hän on tullut äitiinsä",
-   "ru:Серебренников Б. А.: Эрзянско-русский словарь (1993)": "",
-   "def:Абрамов, К. Г.: Валонь ёвтнема валкс (2002)": "",
-   "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
-   "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
-   "Synonyms": "",
-   "Transcription": "/ɑvɑkɑ/",
-   "Etymology": ""
- },
- {
-   "Language": "myv",
-   "POS": "noun",
-   "Lemmas": "авака",
    "Examples": "кодамо тон авака левкс!",
    "ru:Коляденков М.Н., Цыганов Н.Ф.: Эрзянско-русский словарь (1949)": "",
    "fi:Niemi, J., & Mosin, M. V.: Ersäläis-suomalainen sanakirja (1995)": "",
@@ -2817,6 +2802,21 @@
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
    "Transcription": "",
+   "Etymology": ""
+ },
+ {
+   "Language": "myv",
+   "POS": "noun",
+   "Lemmas": "авака",
+   "Examples": "сон авака левкс",
+   "ru:Коляденков М.Н., Цыганов Н.Ф.: Эрзянско-русский словарь (1949)": "",
+   "fi:Niemi, J., & Mosin, M. V.: Ersäläis-suomalainen sanakirja (1995)": "hän on tullut äitiinsä",
+   "ru:Серебренников Б. А.: Эрзянско-русский словарь (1993)": "",
+   "def:Абрамов, К. Г.: Валонь ёвтнема валкс (2002)": "",
+   "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
+   "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
+   "Synonyms": "",
+   "Transcription": "/ɑvɑkɑ/",
    "Etymology": ""
  },
  {
@@ -3169,7 +3169,7 @@
    "POS": "adverb",
    "Lemmas": "аваньксстэ",
    "Examples": "аваньксстэ корты",
-   "ru:Коляденков М.Н., Цыганов Н.Ф.: Эрзянско-русский словарь (1949)": "нечисто, плохо говорит",
+   "ru:Коляденков М.Н., Цыганов Н.Ф.: Эрзянско-русский словарь (1949)": "нечисто,$ плохо говорит",
    "fi:Niemi, J., & Mosin, M. V.: Ersäläis-suomalainen sanakirja (1995)": "",
    "ru:Серебренников Б. А.: Эрзянско-русский словарь (1993)": "",
    "def:Абрамов, К. Г.: Валонь ёвтнема валкс (2002)": "",
@@ -3892,7 +3892,7 @@
    "ru:Коляденков М.Н., Цыганов Н.Ф.: Эрзянско-русский словарь (1949)": "",
    "fi:Niemi, J., & Mosin, M. V.: Ersäläis-suomalainen sanakirja (1995)": "",
    "ru:Серебренников Б. А.: Эрзянско-русский словарь (1993)": "",
-   "def:Абрамов, К. Г.: Валонь ёвтнема валкс (2002)": "Мерить авантень, зярдо бажить невтеме вечкема мелест ды, секе марто, пеедькшнить. Эрси чевтьстэ меремакс.",
+   "def:Абрамов, К. Г.: Валонь ёвтнема валкс (2002)": "Мерить авантень,$ зярдо бажить невтеме вечкема мелест ды,$ секе марто,$ пеедькшнить. Эрси чевтьстэ меремакс.",
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
@@ -5831,7 +5831,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑdɑmoɲ prʲɑ/",
+   "Transcription": "/ɑdɑmoɲprʲɑ/",
    "Etymology": ""
  },
  {
@@ -9566,7 +9566,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑlɡɑnʒej cikʂe/",
+   "Transcription": "/ɑlɡɑnʒejcikʂe/",
    "Etymology": ""
  },
  {
@@ -10316,7 +10316,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑlkuks pɑro/",
+   "Transcription": "/ɑlkukspɑro/",
    "Etymology": ""
  },
  {
@@ -13211,7 +13211,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑnkɕemɑ lɑnɡo/",
+   "Transcription": "/ɑnkɕemɑlɑnɡo/",
    "Etymology": ""
  },
  {
@@ -17396,7 +17396,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲevemc I/",
+   "Transcription": "/ɑrʲcɲevemc/",
    "Etymology": ""
  },
  {
@@ -17411,7 +17411,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲevemc II/",
+   "Transcription": "/ɑrʲcɲevemc/",
    "Etymology": ""
  },
  {
@@ -17426,7 +17426,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲeʋcems I/",
+   "Transcription": "/ɑrʲcɲeʋcems/",
    "Etymology": ""
  },
  {
@@ -17441,7 +17441,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲeʋcems II/",
+   "Transcription": "/ɑrʲcɲeʋcems/",
    "Etymology": ""
  },
  {
@@ -17456,7 +17456,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲeʑ I/",
+   "Transcription": "/ɑrʲcɲeʑ/",
    "Etymology": ""
  },
  {
@@ -17471,7 +17471,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲeʑ II/",
+   "Transcription": "/ɑrʲcɲeʑ/",
    "Etymology": ""
  },
  {
@@ -17486,7 +17486,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲeʑ II/",
+   "Transcription": "/ɑrʲcɲeʑ/",
    "Etymology": ""
  },
  {
@@ -17501,7 +17501,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲemɑ I/",
+   "Transcription": "/ɑrʲcɲemɑ/",
    "Etymology": ""
  },
  {
@@ -17516,7 +17516,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲemɑ II/",
+   "Transcription": "/ɑrʲcɲemɑ/",
    "Etymology": ""
  },
  {
@@ -17531,7 +17531,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲems I/",
+   "Transcription": "/ɑrʲcɲems/",
    "Etymology": ""
  },
  {
@@ -17546,7 +17546,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲems I/",
+   "Transcription": "/ɑrʲcɲems/",
    "Etymology": ""
  },
  {
@@ -17561,7 +17561,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑrʲcɲems II/",
+   "Transcription": "/ɑrʲcɲems/",
    "Etymology": ""
  },
  {
@@ -19016,7 +19016,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑcɑvɑɲ polɑ/",
+   "Transcription": "/ɑcɑvɑɲpolɑ/",
    "Etymology": ""
  },
  {
@@ -20051,7 +20051,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂɑvɑ I/",
+   "Transcription": "/ɑʂɑvɑ/",
    "Etymology": ""
  },
  {
@@ -20066,7 +20066,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂɑvɑ II/",
+   "Transcription": "/ɑʂɑvɑ/",
    "Etymology": ""
  },
  {
@@ -20726,7 +20726,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂo I/",
+   "Transcription": "/ɑʂo/",
    "Etymology": ""
  },
  {
@@ -20741,7 +20741,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂo I/",
+   "Transcription": "/ɑʂo/",
    "Etymology": ""
  },
  {
@@ -20756,7 +20756,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂo I/",
+   "Transcription": "/ɑʂo/",
    "Etymology": ""
  },
  {
@@ -20771,7 +20771,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂo II/",
+   "Transcription": "/ɑʂo/",
    "Etymology": ""
  },
  {
@@ -20786,7 +20786,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂo prʲɑ/",
+   "Transcription": "/ɑʂoprʲɑ/",
    "Etymology": ""
  },
  {
@@ -21281,7 +21281,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ I/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21296,7 +21296,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ I/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21311,7 +21311,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ I/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21326,7 +21326,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ I/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21341,7 +21341,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ I/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21356,7 +21356,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ I/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21371,7 +21371,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ I/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21386,7 +21386,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ I/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21401,7 +21401,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ II/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21416,7 +21416,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ II/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21431,7 +21431,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcemɑ III/",
+   "Transcription": "/ɑʂcemɑ/",
    "Etymology": ""
  },
  {
@@ -21461,7 +21461,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems I/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21476,7 +21476,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems I/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21491,7 +21491,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems I/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21506,7 +21506,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems I/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21521,7 +21521,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems I/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21536,7 +21536,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems I/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21551,7 +21551,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems I/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21566,7 +21566,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems I/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21581,7 +21581,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems I/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21596,7 +21596,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems II/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21611,7 +21611,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems III/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21626,7 +21626,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcems III/",
+   "Transcription": "/ɑʂcems/",
    "Etymology": ""
  },
  {
@@ -21641,7 +21641,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂciks cejcerʲ/",
+   "Transcription": "/ɑʂcikscejcerʲ/",
    "Etymology": ""
  },
  {
@@ -21656,7 +21656,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂciɲ t͡ʂokʂɲe/",
+   "Transcription": "/ɑʂciɲt͡ʂokʂɲe/",
    "Etymology": ""
  },
  {
@@ -21671,7 +21671,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcit͡ɕɑ I/",
+   "Transcription": "/ɑʂcit͡ɕɑ/",
    "Etymology": ""
  },
  {
@@ -21686,7 +21686,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcit͡ɕɑ I/",
+   "Transcription": "/ɑʂcit͡ɕɑ/",
    "Etymology": ""
  },
  {
@@ -21701,7 +21701,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcit͡ɕɑ II/",
+   "Transcription": "/ɑʂcit͡ɕɑ/",
    "Etymology": ""
  },
  {
@@ -21716,7 +21716,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/ɑʂcit͡ɕɑ III/",
+   "Transcription": "/ɑʂcit͡ɕɑ/",
    "Etymology": ""
  },
  {
@@ -21881,7 +21881,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/bɑbɑ lopɑ/",
+   "Transcription": "/bɑbɑlopɑ/",
    "Etymology": ""
  },
  {
@@ -23936,7 +23936,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/bɑnkɑ I/",
+   "Transcription": "/bɑnkɑ/",
    "Etymology": ""
  },
  {
@@ -23951,7 +23951,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/bɑnkɑ I/",
+   "Transcription": "/bɑnkɑ/",
    "Etymology": ""
  },
  {
@@ -23966,7 +23966,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/bɑnkɑ I/",
+   "Transcription": "/bɑnkɑ/",
    "Etymology": ""
  },
  {
@@ -23981,7 +23981,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/bɑnkɑ II/",
+   "Transcription": "/bɑnkɑ/",
    "Etymology": ""
  },
  {
@@ -23996,7 +23996,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/bɑnkɑ II/",
+   "Transcription": "/bɑnkɑ/",
    "Etymology": ""
  },
  {
@@ -24011,7 +24011,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/bɑnkɑ II/",
+   "Transcription": "/bɑnkɑ/",
    "Etymology": ""
  },
  {
@@ -24026,7 +24026,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "кедьге, вармань чакш",
-   "Transcription": "/bɑnkɑ II/",
+   "Transcription": "/bɑnkɑ/",
    "Etymology": ""
  },
  {
@@ -27806,7 +27806,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/beɕɑmoɲ cikʂe/",
+   "Transcription": "/beɕɑmoɲcikʂe/",
    "Etymology": ""
  },
  {
@@ -29621,7 +29621,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/boɡoroɟit͡sɑɲ cikʂe/",
+   "Transcription": "/boɡoroɟit͡sɑɲcikʂe/",
    "Etymology": ""
  },
  {
@@ -30610,7 +30610,7 @@
    "def:Абрамов, К. Г.: Валонь ёвтнема валкс (2002)": "",
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
-   "Synonyms": "# вакска, малава, видьга; # ёнга, пельга, чирева, эзга, ланга; # -ва, -га, -ка, (мезеяк) кувалма, кувалт",
+   "Synonyms": "# вакска, малава, видьга; # ёнга, пельга, чирева, эзга, ланга; # -ва, -га, -ка, (мезеяк) кувалма, кувалт",
    "Transcription": "/bokɑvɑ/",
    "Etymology": ""
  },
@@ -34436,7 +34436,7 @@
    "myv:Коляденков М.Н., Цыганов Н.Ф. (ред.): Русско-эрзянский словарь (1948)": "",
    "myv:Mészáros Edit, Raisza Sirmankina. Erza-mordvin - magyar szótár (2003)": "",
    "Synonyms": "",
-   "Transcription": "/bulʲɲik cikʂe/",
+   "Transcription": "/bulʲɲikcikʂe/",
    "Etymology": ""
  },
  {

@@ -294,7 +294,7 @@
         }
 
         .example-item {
-            margin: 0.1rem 0;
+            margin: 0.3rem 0;
             padding: 0.1rem 1rem;
             font-size: 0.9rem;
         }
@@ -1466,9 +1466,6 @@
                                     const originalDefs = [];
 
                                     examplesForText.forEach(ex => {
-                                        const refIds = ex.sources.map(key => getRefNumber(
-                                            key)).filter(Boolean);
-
                                         const definitions = ex.translation
                                             .split('#')
                                             .map(t => t.trim())
@@ -1480,8 +1477,8 @@
                                                 defsMap.set(def, new Set());
                                                 originalDefs.push(def);
                                             }
-                                            refIds.forEach(id => defsMap.get(def)
-                                                .add(id));
+                                            ex.sources.forEach(src => defsMap.get(
+                                                def).add(src));
                                         });
                                     });
 
@@ -1490,15 +1487,15 @@
                                     let currentGroupAnchor = new Set();
 
                                     originalDefs.forEach(def => {
-                                        const refSet = defsMap.get(def);
+                                        const sourceKeySet = defsMap.get(def);
 
                                         if (currentGroup.length === 0) {
                                             currentGroup.push(def);
-                                            currentGroupAnchor = new Set(refSet);
+                                            currentGroupAnchor = new Set(sourceKeySet);
                                         } else {
                                             let intersects = false;
-                                            for (let ref of refSet) {
-                                                if (currentGroupAnchor.has(ref)) {
+                                            for (let srcKey of sourceKeySet) {
+                                                if (currentGroupAnchor.has(srcKey)) {
                                                     intersects = true;
                                                     break;
                                                 }
@@ -1506,15 +1503,16 @@
 
                                             if (intersects) {
                                                 const newAnchor = new Set();
-                                                for (let ref of currentGroupAnchor) {
-                                                    if (refSet.has(ref)) newAnchor.add(ref);
+                                                for (let srcKey of currentGroupAnchor) {
+                                                    if (sourceKeySet.has(srcKey)) newAnchor
+                                                        .add(srcKey);
                                                 }
                                                 currentGroupAnchor = newAnchor;
                                                 currentGroup.push(def);
                                             } else {
                                                 groups.push(currentGroup);
                                                 currentGroup = [def];
-                                                currentGroupAnchor = new Set(refSet);
+                                                currentGroupAnchor = new Set(sourceKeySet);
                                             }
                                         }
                                     });
@@ -1524,9 +1522,14 @@
 
                                     const groupsHtml = groups.map(group => {
                                         return group.map((def, i) => {
-                                            const refSet = defsMap.get(def);
-                                            const uniqueSortedRefs = [...refSet]
-                                                .sort((a, b) => a - b);
+                                            const sourceKeySet = defsMap.get(def);
+
+                                            const refIds = [...sourceKeySet].map(
+                                                    key => getRefNumber(key))
+                                                .filter(Boolean);
+                                            const uniqueSortedRefs = [...new Set(
+                                                refIds)].sort((a, b) => a - b);
+
                                             const refLinks = uniqueSortedRefs.map(
                                                 refId =>
                                                 `<a href="#ref-${refId}" class="ref-link" data-ref="${refId}">[${refId}]</a>`
