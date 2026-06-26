@@ -585,7 +585,6 @@
 
                     allEntries = normalizeEntries(data);
 
-                    // Check URL for search query AFTER data is loaded
                     const params = new URLSearchParams(window.location.search);
                     const searchedTerm = params.get('query');
 
@@ -766,8 +765,6 @@
             }
 
             function processEntry(original, entry) {
-                // Notice we removed 'Synonyms' from here so it gets grouped exactly 
-                // like a normal source dictionary for examples vs definitions
                 const skipFields = [
                     'Language',
                     'Lemmas',
@@ -1131,7 +1128,6 @@
                     html += `</div>`;
 
                     function getRefNumber(sourceKey) {
-                        // Skip ref attribution for native Synonym keys entirely
                         if (sourceKey === 'Synonyms') return null;
 
                         const displayName = entry._originalToDisplay ? entry._originalToDisplay[sourceKey] :
@@ -1463,7 +1459,6 @@
                                 }
                             }
 
-                            // Notice we removed 'syn' from the exclusion list here
                             if (exMap.size > 0 && !['trx', 'ety'].includes(lang)) {
                                 html += `<div class="examples-wrapper">`;
                                 exMap.forEach((ex) => {
