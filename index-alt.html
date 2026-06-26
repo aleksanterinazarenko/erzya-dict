@@ -977,7 +977,7 @@
                     const start = (currentPage - 1) * PAGE_SIZE + 1;
                     const end = Math.min(currentPage * PAGE_SIZE, totalItems);
                     pageInfoText.textContent =
-                        `Page ${currentPage} of ${totalPages} (${start}-${end} of ${totalItems})`;
+                        `Page ${currentPage} / ${totalPages} (${start}-${end} / ${totalItems})`;
                     pageInfo.textContent = `Showing ${start}-${end} of ${totalItems}`;
                 }
             }
