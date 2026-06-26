@@ -1064,7 +1064,7 @@
                 currentPage = 1;
                 renderPage();
                 statsDisplay.innerHTML =
-                    `<span>${currentResults.length} entries found · ${allEntries.length} total</span><span id="pageInfo">page ${currentPage}</span>`;
+                    `<span>${currentResults.length} entries found · ${allEntries.length} total</span><span id="pageInfo">page ${currentPage} of ${totalPages}</span>`;
             }
 
             function renderPage() {
@@ -1082,7 +1082,7 @@
 
                 renderEntries(pageEntries, searchInput.value.trim());
                 statsDisplay.innerHTML =
-                    `<span>${currentResults.length} entries found · ${allEntries.length} total</span><span id="pageInfo">page ${currentPage}</span>`;
+                    `<span>${currentResults.length} entries found · ${allEntries.length} total</span><span id="pageInfo">page ${currentPage} of ${totalPages}</span>`;
             }
 
             function processAndKeepSeparators(text, searchTerm, refLinks = '') {
