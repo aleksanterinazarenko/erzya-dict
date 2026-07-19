@@ -1393,7 +1393,7 @@
                                         const uniqueRefs = [...new Set(refIds)].sort((a, b) => a - b);
                                         if (uniqueRefs.length === 0) return '';
                                         return uniqueRefs.map(id =>
-                                            `<a href="#ref-${id}" class="ref-link" data-ref="${id}">[${id}]</a>`
+                                            `&#8288;<a href="#ref-${id}" class="ref-link" data-ref="${id}">[${id}]</a>`
                                         ).join('');
                                     }
 
@@ -1577,7 +1577,7 @@
 
                                             const refLinks = uniqueSortedRefs.map(
                                                 refId =>
-                                                `<a href="#ref-${refId}" class="ref-link" data-ref="${refId}">[${refId}]</a>`
+                                                `&#8288;<a href="#ref-${refId}" class="ref-link" data-ref="${refId}">[${refId}]</a>`
                                             ).join('');
 
                                             const rendered =
