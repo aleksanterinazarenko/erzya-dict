@@ -283,6 +283,10 @@
             padding-left: 0.5rem;
         }
 
+        .definition-item {
+            font-size: 1rem;
+        }
+
         .source-value .definition-number {
             font-weight: 500;
             color: #3d2e20;
@@ -364,7 +368,7 @@
 
         .references-bottom {
             margin-top: 0.8rem;
-            padding: 0.5rem 0.8rem;
+            padding: 0.5rem 0.8rem 0.3rem 0.8rem;
             background: #f5f3ef;
             border-radius: 4px;
             font-size: 0.8rem;
@@ -445,7 +449,7 @@
             }
 
             .container {
-                padding: 1.2rem 1rem;
+                padding: 1.2rem 1.2rem;
                 box-shadow: none;
                 border-radius: 0;
             }
@@ -502,8 +506,7 @@
 <body>
     <main class="main-content">
         <div class="container">
-            <h1><a href="/erzya-dict/index.html">Erzya Dictionary <small>Эрзянь
-                        келень валкс</small></a></h1>
+            <h1><a href="/erzya-dict/index.html">Erzya Dictionary <small>Эрзянь валкс</small></a></h1>
 
             <div class="search-area">
                 <div class="search-wrapper">
@@ -1081,7 +1084,24 @@
                     } else {
                         const t = token.trim();
                         if (t) {
-                            result += processTextForLinks(t, searchTerm) + refLinks;
+                            if (refLinks) {
+                                const regex = /(\([^)]+\))|([^(]+)/g;
+                                let m;
+                                let tokenResult = '';
+
+                                while ((m = regex.exec(t)) !== null) {
+                                    if (m[1]) {
+                                        tokenResult += processTextForLinks(m[1].trim(), searchTerm) +
+                                            refLinks + ' ';
+                                    } else if (m[2] && m[2].trim()) {
+                                        tokenResult += processTextForLinks(m[2].trim(), searchTerm) +
+                                            refLinks + ' ';
+                                    }
+                                }
+                                result += tokenResult.trimEnd();
+                            } else {
+                                result += processTextForLinks(t, searchTerm);
+                            }
                         }
                     }
                 });
@@ -1310,10 +1330,16 @@
 
                                         clusters.forEach(cluster => {
                                             const clusterCores = new Set();
-                                            cluster.forEach(b => b.synonyms.forEach(s =>
-                                                clusterCores.add(s.core
-                                                    .toLowerCase())));
-                                            if (blockCores.some(c => clusterCores.has(c))) {
+                                            const clusterSources = new Set();
+
+                                            cluster.forEach(b => {
+                                                b.synonyms.forEach(s => clusterCores
+                                                    .add(s.core.toLowerCase()));
+                                                clusterSources.add(b.sourceKey);
+                                            });
+
+                                            if (blockCores.some(c => clusterCores.has(c)) &&
+                                                !clusterSources.has(block.sourceKey)) {
                                                 intersectingClusters.push(cluster);
                                             } else {
                                                 remainingClusters.push(cluster);
@@ -1324,8 +1350,26 @@
                                             clusters.push([block]);
                                         } else {
                                             const mergedCluster = [block];
-                                            intersectingClusters.forEach(c => mergedCluster.push(...
-                                                c));
+                                            const currentSources = new Set([block.sourceKey]);
+
+                                            intersectingClusters.forEach(c => {
+                                                let hasCollision = false;
+                                                for (let b of c) {
+                                                    if (currentSources.has(b.sourceKey)) {
+                                                        hasCollision = true;
+                                                        break;
+                                                    }
+                                                }
+
+                                                if (!hasCollision) {
+                                                    c.forEach(b => currentSources.add(b
+                                                        .sourceKey));
+                                                    mergedCluster.push(...c);
+                                                } else {
+                                                    remainingClusters.push(c);
+                                                }
+                                            });
+
                                             remainingClusters.push(mergedCluster);
                                             clusters.length = 0;
                                             clusters.push(...remainingClusters);
@@ -1402,32 +1446,22 @@
                                                 merged.parensBefore.forEach((srcKeys,
                                                     text) => {
                                                     htmlParts.push(
-                                                        `${processTextForLinks(text, searchTerm)}`
+                                                        `${processTextForLinks(text, searchTerm)}${renderRefs(srcKeys)}`
                                                     );
                                                 });
 
                                                 htmlParts.push(
-                                                    `${processTextForLinks(merged.core, searchTerm)}`
+                                                    `${processTextForLinks(merged.core, searchTerm)}${renderRefs(merged.sources)}`
                                                 );
 
                                                 merged.parensAfter.forEach((srcKeys,
                                                     text) => {
                                                     htmlParts.push(
-                                                        `${processTextForLinks(text, searchTerm)}`
+                                                        `${processTextForLinks(text, searchTerm)}${renderRefs(srcKeys)}`
                                                     );
                                                 });
 
-                                                const allSourceKeys = new Set();
-                                                merged.sources.forEach(k => allSourceKeys
-                                                    .add(k));
-                                                merged.parensBefore.forEach(set => set
-                                                    .forEach(k => allSourceKeys.add(k)));
-                                                merged.parensAfter.forEach(set => set
-                                                    .forEach(k => allSourceKeys.add(k)));
-
-                                                const itemHtml = htmlParts.join(' ') +
-                                                    renderRefs(
-                                                        allSourceKeys);
+                                                const itemHtml = htmlParts.join(' ');
 
                                                 processed += itemHtml;
                                                 if (idx < mergedSynonyms.length - 1) {
@@ -1565,17 +1599,31 @@
                         }
                     }
 
-                    if (Object.keys(refNumberMap).length > 0) {
-                        const sortedRefs = Object.entries(refNumberMap)
-                            .sort((a, b) => a[1] - b[1]);
+                    const hasSynonyms = entry._sources['Synonyms'] && entry._sources['Synonyms'].value &&
+                        entry._sources['Synonyms'].value.trim() !== '';
 
+                    if (Object.keys(refNumberMap).length > 0 || hasSynonyms) {
                         html += `<div class="references-bottom">`;
-                        sortedRefs.forEach(([source, id]) => {
+
+                        if (Object.keys(refNumberMap).length > 0) {
+                            const sortedRefs = Object.entries(refNumberMap)
+                                .sort((a, b) => a[1] - b[1]);
+
+                            sortedRefs.forEach(([source, id]) => {
+                                html += `<span class="ref-item">`;
+                                html += `<span class="ref-number">[${id}]</span>`;
+                                html += `<span class="ref-source">${source}</span>`;
+                                html += `</span>`;
+                            });
+                        }
+
+                        if (hasSynonyms) {
                             html += `<span class="ref-item">`;
-                            html += `<span class="ref-number">[${id}]</span>`;
-                            html += `<span class="ref-source">${source}</span>`;
+                            html +=
+                                `<span class="ref-source">Some synonyms come from <a href="https://akusanat.com/verdd/" style="text-decoration: none; color: inherit">Veʹrdd</a>, developed by Khalid Alnajjar, Jack Rueter, and Mika Hämäläinen.</span>`;
                             html += `</span>`;
-                        });
+                        }
+
                         html += `</div>`;
                     }
 
