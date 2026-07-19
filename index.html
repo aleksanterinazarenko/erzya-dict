@@ -499,6 +499,10 @@
             .pagination {
                 gap: 0.5rem;
             }
+
+.container:not(:has(.pagination.visible)) {
+        padding-bottom: 2rem; /* Adds space only when pagination is hidden */
+    }
         }
     </style>
 </head>

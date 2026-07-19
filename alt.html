@@ -499,6 +499,10 @@
             .pagination {
                 gap: 0.5rem;
             }
+
+            .container:not(:has(.pagination.visible)) {
+                padding-bottom: 2rem;
+            }
         }
     </style>
 </head>
@@ -1626,7 +1630,8 @@
 
                         if (hasSynonyms) {
                             html += `<span class="ref-item">`;
-                            html += `<span class="ref-source">Some synonyms come from <a href="https://akusanat.com/verdd/" style="text-decoration: none; color: inherit">Veʹrdd</a>, developed by Khalid Alnajjar, Jack Rueter, and Mika Hämäläinen.</span>`;
+                            html +=
+                                `<span class="ref-source">Some synonyms come from <a href="https://akusanat.com/verdd/" style="text-decoration: none; color: inherit">Veʹrdd</a>, developed by Khalid Alnajjar, Jack Rueter, and Mika Hämäläinen.</span>`;
                             html += `</span>`;
                         }
 
